@@ -1,0 +1,16 @@
+{
+  "dataset": "Synthetic historical sales",
+  "test_start": "2026-08-01",
+  "test_end": "2026-10-31",
+  "test_rows": 276,
+  "baseline": {
+    "MAE": 4.094,
+    "RMSE": 5.227,
+    "WAPE_percent": 28.62
+  },
+  "xgboost": {
+    "MAE": 3.059,
+    "RMSE": 3.897,
+    "WAPE_percent": 21.39
+  }
+}
