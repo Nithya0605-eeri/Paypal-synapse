@@ -1,0 +1,18 @@
+import { useState } from "react";
+const input = "rounded-lg border border-slate-600 bg-slate-950 px-3 py-2 w-full";
+const button = "rounded-lg bg-blue-600 px-4 py-3 hover:bg-blue-500 disabled:opacity-50";
+export default function SprintLab(){
+ const [product,setProduct]=useState("1"),[approval,setApproval]=useState("2"),[mult,setMult]=useState("1.5"),[days,setDays]=useState("7"),[budget,setBudget]=useState("1000"),[delay,setDelay]=useState("0"),[question,setQuestion]=useState("What is the inventory risk?");
+ const [result,setResult]=useState(null),[error,setError]=useState(""),[busy,setBusy]=useState(false);
+ const qs=new URLSearchParams({multiplier:mult,days,budget,delay});
+ async function run(path){setBusy(true);setError("");setResult(null);try{const r=await fetch(`/api/sprint/${path}`);const d=await r.json();if(!r.ok)throw new Error(typeof d.detail==="string"?d.detail:"Request failed");setResult(d)}catch(e){setError(e.message)}finally{setBusy(false)}}
+ return <section className="mt-6 rounded-2xl border border-cyan-700 bg-[#111c31] p-6 text-slate-100"><h3 className="text-2xl font-bold">Hackathon Sprint Studio</h3><p className="text-sm text-slate-400 mt-2 mb-5">Five read-only demo upgrades. No purchases or captures are performed.</p>
+ <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-4">{[["Product ID",product,setProduct],["Demand multiplier",mult,setMult],["Days",days,setDays],["Budget USD",budget,setBudget],["Supplier delay (days)",delay,setDelay],["Approval ID",approval,setApproval]].map(([label,v,set])=><label key={label} className="text-sm">{label}<input className={input} type="number" min="0" value={v} onChange={e=>set(e.target.value)}/></label>)}</div>
+ <div className="grid sm:grid-cols-2 gap-3"><button className={button} disabled={busy} onClick={()=>run(`scenario/${product}?${qs}`)}>1. What-If Digital Twin</button><button className={button} disabled={busy} onClick={()=>run(`trace/${product}?${qs}`)}>2. Agent Decision Trace</button><button className={button} disabled={busy} onClick={()=>run(`checkout-audit/${approval}`)}>3. PayPal Checkout Audit</button><button className={button} disabled={busy} onClick={()=>run("backtest-summary")}>5. ML Evaluation Summary</button></div>
+ <label className="block mt-5 text-sm">4. Merchant Copilot Question<input className={input} maxLength={500} value={question} onChange={e=>setQuestion(e.target.value)}/></label><button className={`${button} mt-2`} disabled={busy} onClick={()=>run(`copilot/${product}?${new URLSearchParams({question})}`)}>Ask Merchant Copilot</button>
+ {busy&&<p className="mt-4">Loading...</p>}{error&&<p role="alert" className="mt-4 text-red-300">{error}</p>}
+ {result?.steps&&<div className="mt-5 grid gap-2">{result.steps.map((step,i)=><div key={i} className="rounded-lg border border-slate-700 p-3"><strong>{i+1}. {step.stage}</strong><p className="text-sm text-cyan-200">{step.detail}</p></div>)}</div>}
+ {result?.projected_demand!==undefined&&<div className="grid sm:grid-cols-3 gap-3 mt-5">{[["Projected demand",result.projected_demand],["Shortage before purchase",result.shortage_before_purchase],["Shortage after plan",result.remaining_shortage]].map(([k,v])=><div key={k} className="rounded-lg border border-slate-700 p-3"><p className="text-sm text-slate-400">{k}</p><p className="text-2xl font-bold">{v}</p></div>)}</div>}
+ {result&&<pre className="mt-4 overflow-auto max-h-96 rounded-lg bg-slate-950 p-4 text-xs text-emerald-300">{JSON.stringify(result,null,2)}</pre>}
+ </section>
+}

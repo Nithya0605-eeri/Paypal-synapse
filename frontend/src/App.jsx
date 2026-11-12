@@ -1,3 +1,5 @@
+import AdvancedAI from "./AdvancedAI";
+import SprintLab from "./SprintLab";
 import { useState } from "react";
 import PaymentConfirmation from "./PaymentConfirmation";
 import {
@@ -14,6 +16,7 @@ const navigation = [
   { name: "Procurement", icon: Boxes },
   { name: "AI Agents", icon: BrainCircuit },
   { name: "PayPal Payments", icon: CreditCard },
+  { name: "Advanced AI", icon: BrainCircuit },
 ];
 import {
   BarChart, Bar, XAxis, YAxis,
@@ -188,6 +191,8 @@ Procurement: [
           </div>
         </header>
 
+        {activePage === "Advanced AI" && <div className="mb-8"><AdvancedAI /></div>}
+        {activePage === "Advanced AI" && <div className="mb-8"><SprintLab /></div>}
         <div className="mb-8 grid gap-4 md:grid-cols-3">
           {[
             ["AI Forecasting", "XGBoost", TrendingUp],

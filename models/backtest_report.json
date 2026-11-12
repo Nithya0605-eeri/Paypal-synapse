@@ -1,0 +1,245 @@
+{
+  "dataset": "Synthetic historical sales (not live merchant data)",
+  "evaluation": "Expanding-window rolling-origin; one-step predictions with observed historical lags",
+  "limitations": [
+    "Not recursive multi-day forecasting",
+    "Synthetic data; no external validity claim",
+    "Feature lags use observed prior days; not suitable for unknown future days without updating history",
+    "Inference timing is local and hardware-dependent"
+  ],
+  "features": [
+    "product_id",
+    "is_weekend",
+    "lag_1",
+    "lag_7",
+    "rolling_7",
+    "day_of_week",
+    "month",
+    "day_of_year"
+  ],
+  "folds": [
+    {
+      "fold": 1,
+      "train_end": "2026-07-03",
+      "test_start": "2026-07-04",
+      "test_end": "2026-08-02",
+      "test_rows": 90,
+      "models": {
+        "seasonal_naive_lag7": {
+          "metrics": {
+            "MAE": 3.6333,
+            "RMSE": 4.6821,
+            "WAPE_percent": 23.175
+          },
+          "inference_ms_per_row": 0.0
+        },
+        "mean_baseline": {
+          "metrics": {
+            "MAE": 4.3878,
+            "RMSE": 5.4438,
+            "WAPE_percent": 27.987
+          },
+          "inference_ms_per_row": 0.00047
+        },
+        "ridge": {
+          "metrics": {
+            "MAE": 2.6793,
+            "RMSE": 3.319,
+            "WAPE_percent": 17.09
+          },
+          "inference_ms_per_row": 0.00509
+        },
+        "random_forest": {
+          "metrics": {
+            "MAE": 2.7904,
+            "RMSE": 3.3946,
+            "WAPE_percent": 17.799
+          },
+          "inference_ms_per_row": 0.14613
+        },
+        "xgboost": {
+          "metrics": {
+            "MAE": 2.7379,
+            "RMSE": 3.3808,
+            "WAPE_percent": 17.464
+          },
+          "inference_ms_per_row": 0.01999
+        }
+      }
+    },
+    {
+      "fold": 2,
+      "train_end": "2026-08-02",
+      "test_start": "2026-08-03",
+      "test_end": "2026-09-01",
+      "test_rows": 90,
+      "models": {
+        "seasonal_naive_lag7": {
+          "metrics": {
+            "MAE": 3.7667,
+            "RMSE": 4.7551,
+            "WAPE_percent": 26.117
+          },
+          "inference_ms_per_row": 0.0
+        },
+        "mean_baseline": {
+          "metrics": {
+            "MAE": 4.8727,
+            "RMSE": 5.7309,
+            "WAPE_percent": 33.786
+          },
+          "inference_ms_per_row": 0.00027
+        },
+        "ridge": {
+          "metrics": {
+            "MAE": 2.9743,
+            "RMSE": 3.6644,
+            "WAPE_percent": 20.623
+          },
+          "inference_ms_per_row": 0.00372
+        },
+        "random_forest": {
+          "metrics": {
+            "MAE": 3.0836,
+            "RMSE": 3.808,
+            "WAPE_percent": 21.381
+          },
+          "inference_ms_per_row": 0.15497
+        },
+        "xgboost": {
+          "metrics": {
+            "MAE": 3.0568,
+            "RMSE": 3.8181,
+            "WAPE_percent": 21.195
+          },
+          "inference_ms_per_row": 0.01045
+        }
+      }
+    },
+    {
+      "fold": 3,
+      "train_end": "2026-09-01",
+      "test_start": "2026-09-02",
+      "test_end": "2026-10-01",
+      "test_rows": 90,
+      "models": {
+        "seasonal_naive_lag7": {
+          "metrics": {
+            "MAE": 5.2667,
+            "RMSE": 6.5286,
+            "WAPE_percent": 36.574
+          },
+          "inference_ms_per_row": 0.0
+        },
+        "mean_baseline": {
+          "metrics": {
+            "MAE": 4.9713,
+            "RMSE": 6.1977,
+            "WAPE_percent": 34.523
+          },
+          "inference_ms_per_row": 0.00026
+        },
+        "ridge": {
+          "metrics": {
+            "MAE": 3.4687,
+            "RMSE": 4.3944,
+            "WAPE_percent": 24.088
+          },
+          "inference_ms_per_row": 0.0034
+        },
+        "random_forest": {
+          "metrics": {
+            "MAE": 3.3094,
+            "RMSE": 4.2712,
+            "WAPE_percent": 22.982
+          },
+          "inference_ms_per_row": 0.15624
+        },
+        "xgboost": {
+          "metrics": {
+            "MAE": 3.463,
+            "RMSE": 4.4679,
+            "WAPE_percent": 24.048
+          },
+          "inference_ms_per_row": 0.01025
+        }
+      }
+    },
+    {
+      "fold": 4,
+      "train_end": "2026-10-01",
+      "test_start": "2026-10-02",
+      "test_end": "2026-10-31",
+      "test_rows": 90,
+      "models": {
+        "seasonal_naive_lag7": {
+          "metrics": {
+            "MAE": 3.2889,
+            "RMSE": 4.1553,
+            "WAPE_percent": 23.604
+          },
+          "inference_ms_per_row": 0.0
+        },
+        "mean_baseline": {
+          "metrics": {
+            "MAE": 4.6004,
+            "RMSE": 5.3211,
+            "WAPE_percent": 33.017
+          },
+          "inference_ms_per_row": 0.00026
+        },
+        "ridge": {
+          "metrics": {
+            "MAE": 2.7865,
+            "RMSE": 3.5975,
+            "WAPE_percent": 19.999
+          },
+          "inference_ms_per_row": 0.00351
+        },
+        "random_forest": {
+          "metrics": {
+            "MAE": 2.7037,
+            "RMSE": 3.4624,
+            "WAPE_percent": 19.404
+          },
+          "inference_ms_per_row": 0.15075
+        },
+        "xgboost": {
+          "metrics": {
+            "MAE": 2.6978,
+            "RMSE": 3.4936,
+            "WAPE_percent": 19.362
+          },
+          "inference_ms_per_row": 0.00988
+        }
+      }
+    }
+  ],
+  "mean_metrics": {
+    "seasonal_naive_lag7": {
+      "MAE": 3.9889,
+      "RMSE": 5.0303,
+      "WAPE_percent": 27.3675
+    },
+    "mean_baseline": {
+      "MAE": 4.7081,
+      "RMSE": 5.6734,
+      "WAPE_percent": 32.3282
+    },
+    "ridge": {
+      "MAE": 2.9772,
+      "RMSE": 3.7438,
+      "WAPE_percent": 20.45
+    },
+    "random_forest": {
+      "MAE": 2.9718,
+      "RMSE": 3.7341,
+      "WAPE_percent": 20.3915
+    },
+    "xgboost": {
+      "MAE": 2.9889,
+      "RMSE": 3.7901,
+      "WAPE_percent": 20.5172
+    }
+  }
+}

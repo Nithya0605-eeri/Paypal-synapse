@@ -34,3 +34,21 @@ build/
 
 # Logs
 *.log
+# Local backups
+*_backup.py
+*_old.jsx
+
+# Secrets and local databases
+.env
+.env.*
+!.env.example
+*.db
+*.sqlite
+*.sqlite3
+
+# Python and frontend dependencies
+.venv/
+__pycache__/
+.pytest_cache/
+node_modules/
+dist/

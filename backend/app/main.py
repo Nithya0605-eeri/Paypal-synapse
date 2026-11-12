@@ -3,6 +3,8 @@ from fastapi import Depends, HTTPException, Query
 from sqlalchemy.orm import Session
 from pydantic import BaseModel, ConfigDict
 from app.auth import verify_merchant_api_key
+from app.advanced.api import router as advanced_router
+from app.advanced.sprint import router as sprint_router
 
 from app.payments.approval_service import (
     approve_procurement_request,
@@ -29,6 +31,8 @@ app = FastAPI(
     description="AI-Powered Autonomous Commerce Digital Twin",
     version="1.0.0"
 )
+app.include_router(advanced_router)
+app.include_router(sprint_router)
 
 
 @app.get("/")

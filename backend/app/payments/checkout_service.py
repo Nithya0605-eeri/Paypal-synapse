@@ -49,44 +49,6 @@ def prepare_procurement_checkout(
         "payment_status": "not_initiated"
     }
 
-def create_procurement_paypal_order(
-    db: Session,
-    approval_id: int
-):
-    checkout = prepare_procurement_checkout(
-        db=db,
-        approval_id=approval_id
-    )
-    claim = db.execute(
-        update(ProcurementApproval)
-        .where(
-            ProcurementApproval.id == approval_id,
-            ProcurementApproval.status == "checkout_pending",
-            ProcurementApproval.paypal_order_id.is_(None)
-        )
-        .values(status="checkout_processing")
-    )
-
-    if claim.rowcount != 1:
-        db.rollback()
-        raise ValueError(
-            "Checkout already started or is unavailable."
-        )
-
-    try:
-        db.commit()
-    except Exception:
-        db.rollback()
-        raise
-
-    # Use the approved amount from SQLite.
-    amount = checkout["amount_usd"]
-
-    # Reuse the persisted idempotency key.
-    request_id = checkout["paypal_request_id"]
-
-    # Create a PayPal Sandbox order.
-    from decimal import Decimal
 
 from sqlalchemy.orm import Session
 from sqlalchemy import update
@@ -219,46 +181,21 @@ def get_procurement_checkout_status(
     if approval is None:
         raise ValueError("Procurement request not found.")
 
-    if approval.paypal_order_id:
-        payment_state = "order_created"
-        recovery_action = "use_existing_order"
+    if (
+        approval.status == "payment_completed"
+        and approval.payment_status == "captured"
+        and approval.paypal_capture_id
+    ):
+        payment_state = "captured"
+        recovery_action = "none"
 
     elif approval.status == "checkout_processing":
         payment_state = "outcome_unknown"
         recovery_action = "manual_reconciliation_required"
 
-    elif approval.status == "checkout_pending":
-        payment_state = "not_initiated_or_unconfirmed"
-        recovery_action = "verify_before_checkout"
-
-    else:
-        payment_state = "not_ready"
-        recovery_action = "review_approval_status"
-
-    return {
-        "approval_id": approval.id,
-        "checkout_status": approval.status,
-        "payment_state": payment_state,
-        "paypal_order_exists": bool(approval.paypal_order_id),
-        "request_id_stored": bool(approval.paypal_request_id),
-        "recovery_action": recovery_action
-    }
-def get_procurement_checkout_status(
-    db: Session,
-    approval_id: int
-):
-    approval = db.get(ProcurementApproval, approval_id)
-
-    if approval is None:
-        raise ValueError("Procurement request not found.")
-
-    if approval.paypal_order_id:
+    elif approval.paypal_order_id:
         payment_state = "order_created"
         recovery_action = "use_existing_order"
-
-    elif approval.status == "checkout_processing":
-        payment_state = "outcome_unknown"
-        recovery_action = "manual_reconciliation_required"
 
     elif approval.status == "checkout_pending":
         payment_state = "not_initiated_or_unconfirmed"
