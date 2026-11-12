@@ -1,441 +1,500 @@
-PayPal Synapse
+# PayPal Synapse
 
-AI-Powered Autonomous Commerce Digital Twin
+### AI-Powered Autonomous Commerce Digital Twin
 
-Predict demand. Simulate disruptions. Optimize procurement. Execute human-approved payments.
+**Predict Demand. Simulate Disruptions. Optimize Procurement. Execute Human-Approved Payments.**
 
-PayPal Synapse is an AI-powered commerce intelligence platform designed to help merchants anticipate inventory shortages, evaluate supplier decisions, and manage procurement through intelligent AI agents and secure PayPal Sandbox payment workflows.
+Built for the **PayPal AI Hackathon 2026**.
 
-Instead of reacting to inventory shortages after they occur, Synapse helps merchants make proactive, data-driven purchasing decisions.
+PayPal Synapse is an AI-powered commerce intelligence platform designed to help merchants anticipate inventory shortages, evaluate supply-chain disruptions, optimize procurement decisions, and manage purchasing through human-approved PayPal Sandbox payment workflows.
 
-Built for the PayPal AI Hackathon 2026.
+Instead of reacting to inventory shortages after they occur, Synapse helps merchants make proactive, data-driven decisions.
 
-⸻
+---
 
-1. The Problem
+## 1. Problem Statement
 
 Modern merchants face several interconnected challenges:
 
-* Unpredictable customer demand
-* Inventory shortages and excess stock
-* Supplier delays and disruptions
-* Inefficient procurement decisions
-* Limited visibility into future inventory risks
-* Manual purchasing and payment workflows
+- Unpredictable customer demand
+- Inventory shortages and overstocking
+- Supplier delays and supply-chain disruptions
+- Inefficient procurement decisions
+- Limited visibility into future business risks
+- Disconnected inventory planning and payment workflows
 
-Traditional inventory systems primarily track what has already happened.
+Traditional inventory management systems primarily monitor historical and current stock levels.
 
-Merchants need systems that can predict what might happen next, simulate potential outcomes, and recommend intelligent actions before problems occur.
+PayPal Synapse explores a more proactive approach by combining machine learning, probabilistic simulation, optimization, and payment orchestration.
 
-2. Our Solution
+---
 
-PayPal Synapse introduces an AI-powered autonomous commerce digital twin.
+## 2. Our Solution
 
-The platform combines machine learning, probabilistic simulations, supplier optimization, explainable AI, and agent-based orchestration to support intelligent procurement.
+PayPal Synapse acts as a digital twin of merchant commerce operations.
 
-The system follows a decision-making pipeline:
+A digital twin is a computational representation of a real-world system that can be used to analyze its behavior and explore alternative scenarios.
 
-Monitor → Forecast → Simulate → Evaluate Risk → Optimize → Recommend → Human Approval → PayPal Checkout → Payment Capture
+The platform connects demand intelligence, inventory risk analysis, supplier decisions, and procurement payments.
 
-AI handles analysis and recommendations, while merchants retain control over purchasing and payment authorization.
+### Core Workflow
 
-3. Key Features
+1. Analyze merchant sales and inventory information.
+2. Forecast future product demand.
+3. Simulate alternative business scenarios.
+4. Identify potential inventory shortages.
+5. Evaluate procurement requirements.
+6. Generate purchasing recommendations.
+7. Require human approval before payment execution.
+8. Create a PayPal Sandbox order.
+9. Complete the Sandbox checkout and capture workflow.
+10. Track the resulting payment status.
 
-AI Demand Forecasting
+The goal is to support merchants throughout the procurement decision lifecycle.
 
-Synapse uses machine learning to estimate future product demand based on historical sales and time-dependent features.
+---
 
-Capabilities include:
+## 3. Key Features
 
-* Product-level demand forecasting
-* Historical sales analysis
-* Calendar-based feature engineering
-* Inventory shortage prediction
-* Forecast-driven procurement recommendations
+### 3.1 AI-Powered Demand Forecasting
 
-Commerce Digital Twin
+The forecasting module analyzes historical sales patterns to estimate future product demand.
 
-The digital twin provides a simulated representation of merchant inventory and purchasing conditions.
+Its purpose is to support:
 
-Merchants can explore potential outcomes before making real procurement decisions.
+- Inventory planning
+- Demand trend analysis
+- Shortage anticipation
+- Purchasing decisions
+- Forecast evaluation
 
-Monte Carlo Simulation
+The machine learning implementation is organized into model training, prediction, and backtesting components.
 
-Probabilistic simulations help evaluate uncertainty in future demand.
+### 3.2 Commerce Digital Twin
 
-This allows merchants to understand potential inventory risks rather than relying exclusively on single-point predictions.
+The digital twin provides a computational environment for exploring how merchant operations may respond to changing conditions.
 
-Supplier Comparison and Optimization
+Example scenarios include:
 
-Synapse evaluates procurement alternatives and helps identify suitable purchasing decisions.
+- Increased customer demand
+- Unexpected demand spikes
+- Supplier delays
+- Inventory shortages
+- Changes in replenishment requirements
 
-The optimization workflow connects inventory requirements with supplier recommendations.
+These simulations help evaluate possible outcomes before procurement decisions are made.
 
-Multi-Agent Commerce Orchestration
+### 3.3 Probabilistic Simulation
 
-AI-driven workflows coordinate several decision-making functions:
+Probabilistic simulation helps represent uncertainty in commerce operations.
 
-* Demand analysis
-* Inventory risk evaluation
-* Supplier comparison
-* Procurement optimization
-* Purchase recommendations
+Instead of relying exclusively on one expected outcome, merchants can explore multiple potential demand and inventory scenarios.
 
-The goal is to transform individual AI predictions into actionable commerce decisions.
+This supports risk-aware decision-making.
 
-Explainable AI
+### 3.4 Procurement Optimization
 
-Synapse includes explanation endpoints that help users understand model predictions, inventory risks, and agent recommendations.
+The optimization module supports procurement planning by evaluating purchasing requirements and business constraints.
 
-Advanced AI Capabilities
+Its objectives include:
 
-The platform includes backend capabilities for:
+- Reducing avoidable stockouts
+- Improving inventory availability
+- Supporting cost-aware purchasing
+- Evaluating replenishment needs
+- Producing actionable procurement recommendations
 
-* Monte Carlo simulations
-* Risk analysis
-* Graph-based analysis
-* AI explanations
-* Agent explanations
-* Conversational AI interactions
-* Model evaluation metrics
+### 3.5 AI Commerce Decision Support
 
-Backtesting and Evaluation
+PayPal Synapse connects forecasting, simulation, and procurement analysis into a unified decision-support workflow.
 
-Historical backtesting supports the evaluation of forecasting behavior and helps assess model performance on past data.
+The platform is designed to assist merchants in understanding why a purchase may be necessary and what risks it may address.
 
-Human-in-the-Loop Procurement
+### 3.6 Human-in-the-Loop Approval
 
-Synapse is designed around responsible automation.
+Financial decisions require explicit human authorization.
 
-AI agents can generate recommendations, but purchasing decisions require explicit human approval.
+Synapse separates automated recommendations from payment execution.
 
-PayPal Sandbox Integration
+The workflow includes:
 
-The platform integrates PayPal Sandbox APIs to support a controlled procurement payment workflow.
+- Purchase proposal generation
+- Human approval or rejection
+- Approved purchase preparation
+- PayPal Sandbox checkout
+- Explicit payment confirmation
+- Transaction status tracking
 
-Implemented capabilities include:
+AI recommendations do not independently authorize financial transactions.
 
-* PayPal Sandbox authentication
-* Purchase approval and rejection
-* Procurement checkout preparation
-* PayPal order creation
-* Checkout status tracking
-* Human-confirmed payment capture
-* Payment outcome tracking
-* Idempotency support
-* Checkout recovery guidance
+### 3.7 PayPal Sandbox Integration
 
-⸻
+The payment module integrates PayPal Sandbox APIs into the procurement workflow.
 
-4. System Architecture
+Supported capabilities include:
 
-                  MERCHANT
-                     |
-                     v
-              REACT DASHBOARD
-                     |
-                     v
-               FASTAPI BACKEND
-                     |
-        +------------+------------+
-        |            |            |
-        v            v            v
-   AI / ML       DIGITAL TWIN   PROCUREMENT
-   ENGINE        SIMULATION     ENGINE
-        |            |            |
-        +------------+------------+
-                     |
-                     v
-              AI AGENT WORKFLOW
-                     |
-                     v
-             SUPPLIER OPTIMIZATION
-                     |
-                     v
-              PURCHASE PROPOSAL
-                     |
-                     v
-               HUMAN APPROVAL
-                     |
-                     v
-              PAYPAL SANDBOX
-                     |
-                     v
-             ORDER + CHECKOUT
-                     |
-                     v
-              PAYMENT CAPTURE
-                     |
-                     v
-                SQLITE DATABASE
+- PayPal order creation
+- Checkout approval URLs
+- Human-confirmed payment capture
+- Payment status tracking
+- Persistent PayPal order identifiers
+- Idempotency support
+- Checkout recovery guidance
+
+The Sandbox integration enables testing with simulated transactions rather than live payments.
+
+### 3.8 Interactive Dashboard
+
+The React frontend provides a user interface for exploring commerce intelligence and operational workflows.
+
+The project includes dashboard and advanced analytics components for presenting the platform's capabilities.
+
+---
+
+## 4. System Architecture
+
+PayPal Synapse follows a modular architecture separating the frontend, application backend, intelligence components, persistence layer, and payment integration.
+
+```text
+                         MERCHANT
+                            |
+                            v
+                     REACT DASHBOARD
+                            |
+                            v
+                      FASTAPI BACKEND
+                            |
+          +-----------------+-----------------+
+          |                 |                 |
+          v                 v                 v
+      AI / ML           DIGITAL TWIN      PROCUREMENT
+      ENGINE            SIMULATION        WORKFLOW
+          |                 |                 |
+          v                 v                 v
+      DEMAND             SCENARIO          PURCHASE
+      FORECAST           ANALYSIS          PROPOSAL
+          |                 |                 |
+          +-----------------+-----------------+
+                            |
+                            v
+                    HUMAN APPROVAL
+                            |
+                            v
+                    PAYPAL SANDBOX
+                            |
+                            v
+                    PAYMENT CAPTURE
+                            |
+                            v
+                      SQLITE DATABASE
+```
 
 The architecture separates predictive intelligence, procurement decision-making, and payment execution.
 
-This separation helps keep automated recommendations independent from financial authorization.
+This separation helps ensure that automated recommendations do not bypass financial authorization requirements.
 
-⸻
+---
 
-5. Technology Stack
+## 5. Technology Stack
 
-Layer	Technologies
-Frontend	React, JavaScript, JSX
-Backend	Python, FastAPI
-API Documentation	OpenAPI, Swagger UI
-Machine Learning	Python, pandas, scikit-learn
-Simulations	Monte Carlo methods
-Database	SQLite
-ORM	SQLAlchemy
-Payments	PayPal REST APIs, PayPal Sandbox
-Authentication	Merchant API key authentication
-Testing	pytest
-Version Control	Git, GitHub
+### Frontend
 
-⸻
+- React
+- JavaScript
+- JSX
+- HTML
+- CSS
 
-6. Machine Learning Pipeline
+### Backend
 
-The forecasting workflow follows these stages:
+- Python
+- FastAPI
+- Uvicorn
+- REST APIs
+- Pydantic
 
-Step 1 — Data Preparation
+### Machine Learning and Data Science
 
-Historical sales records are prepared for model training.
+- Python
+- Pandas
+- NumPy
+- Scikit-learn
+- Demand forecasting
+- Feature engineering
+- Model evaluation
+- Backtesting
 
-Step 2 — Feature Engineering
+### Simulation and Optimization
 
-Time-dependent features are generated to capture demand patterns.
+- Probabilistic simulation
+- Scenario analysis
+- Inventory risk evaluation
+- Procurement optimization
 
-Step 3 — Model Training
+### Database
 
-Machine learning models learn relationships between historical observations and future demand.
+- SQLite
+- SQLAlchemy
 
-Step 4 — Demand Prediction
+### Payment Integration
 
-Trained models generate product-level demand forecasts.
+- PayPal REST APIs
+- PayPal Sandbox
+- PayPal Orders
+- Payment capture
+- Idempotency keys
 
-Step 5 — Simulation
+### Development and Testing
 
-Probabilistic simulations explore potential variations in future outcomes.
+- Git
+- GitHub
+- Visual Studio Code
+- Pytest
+- Python virtual environments
 
-Step 6 — Optimization
+---
 
-Forecasts and inventory conditions inform procurement recommendations.
+## 6. Machine Learning Pipeline
 
-Step 7 — Evaluation
+The machine learning pipeline supports demand prediction and forecast evaluation.
 
-Backtesting helps assess model behavior on historical observations.
+### Stage 1: Data Preparation
 
-⸻
+Historical sales information is prepared for forecasting.
 
-7. PayPal Integration
+This may include:
 
-PayPal Synapse connects AI-driven procurement recommendations with PayPal Sandbox checkout.
+- Date processing
+- Data cleaning
+- Missing-value handling
+- Sales aggregation
+- Feature engineering
 
-Payment Workflow
+### Stage 2: Feature Engineering
 
-1. The AI workflow identifies a procurement opportunity.
-2. The system generates a purchase recommendation.
-3. The merchant reviews the proposed purchase.
-4. The merchant approves or rejects the request.
-5. Synapse prepares the approved checkout.
-6. A PayPal Sandbox order is created.
-7. The merchant completes the PayPal approval flow.
-8. The backend captures the approved payment after explicit confirmation.
-9. The payment result is recorded and made available through the checkout status API.
+Features may capture temporal patterns such as:
 
-Demonstrated Sandbox Transaction
+- Day of the week
+- Weekend indicators
+- Day of the year
+- Historical sales behavior
+- Lagged sales information
 
-A PayPal Sandbox procurement transaction was successfully tested.
+### Stage 3: Model Training
 
-Field	Result
-Environment	PayPal Sandbox
-Approval ID	2
-Transaction Amount	$390.00 USD
-PayPal Order Status	APPROVED
-Capture Status	Captured
-Application Status	payment_completed
-HTTP Response	200
+The training module builds predictive models from historical data.
 
-This demonstrates an end-to-end integration from an approved procurement record to a successfully captured PayPal Sandbox payment.
+### Stage 4: Demand Prediction
 
-Note: PayPal Sandbox transactions are simulated and do not represent real-money transfers.
+The prediction module generates estimates of future demand.
 
-Payment Safety
+### Stage 5: Backtesting
 
-The payment workflow includes:
+Backtesting evaluates forecasting behavior using historical observations.
 
-* Explicit human approval
-* Merchant API key protection
-* Server-side payment execution
-* Persisted PayPal request identifiers
-* Duplicate checkout prevention
-* Payment status verification
-* Recovery handling for uncertain checkout outcomes
+A key objective is avoiding data leakage by ensuring that predictions do not use information unavailable at prediction time.
 
-The system is designed to avoid blindly repeating payment operations when their outcome is unknown.
+### Stage 6: Procurement Decision Support
 
-⸻
+Forecast outputs can inform inventory analysis and procurement recommendations.
 
-8. API Endpoints
+---
 
-FastAPI automatically generates interactive API documentation.
+## 7. Digital Twin and Simulation
 
-After starting the backend, visit:
+The digital twin is designed to explore the relationship between demand, inventory availability, and procurement decisions.
+
+### Example Scenario
+
+A merchant expects increased demand for a product.
+
+The simulation workflow can explore:
+
+1. Baseline expected demand.
+2. Higher-than-expected demand.
+3. Potential supplier disruption.
+4. Inventory availability under each scenario.
+5. Possible replenishment requirements.
+
+This helps merchants compare potential outcomes rather than relying on a single forecast.
+
+---
+
+## 8. Procurement and Payment Workflow
+
+The procurement workflow connects business intelligence to financial execution.
+
+```text
+DEMAND FORECAST
+      |
+      v
+INVENTORY RISK ANALYSIS
+      |
+      v
+PROCUREMENT RECOMMENDATION
+      |
+      v
+PURCHASE APPROVAL REQUEST
+      |
+      v
+HUMAN APPROVAL
+      |
+      v
+PAYPAL ORDER CREATION
+      |
+      v
+PAYPAL SANDBOX CHECKOUT
+      |
+      v
+HUMAN PAYMENT CONFIRMATION
+      |
+      v
+PAYMENT CAPTURE
+      |
+      v
+TRANSACTION STATUS UPDATE
+```
+
+### Payment Safety
+
+PayPal Synapse uses a human-in-the-loop model.
+
+A purchase recommendation is not equivalent to payment authorization.
+
+Payment execution requires the appropriate approval state and explicit confirmation.
+
+---
+
+## 9. PayPal Sandbox Integration
+
+PayPal Sandbox provides a test environment for validating payment workflows.
+
+The integration connects approved procurement requests with PayPal order creation and capture.
+
+### Order Creation
+
+After a purchase is approved, the backend can create a PayPal Sandbox order.
+
+The response includes information such as:
+
+- Approval ID
+- PayPal order ID
+- Order status
+- Approval URL
+- Purchase amount
+- Payment status
+
+### Checkout Approval
+
+The merchant can open the PayPal Sandbox checkout URL and review the purchase.
+
+### Payment Capture
+
+After PayPal checkout approval, the backend provides a capture operation requiring explicit human confirmation.
+
+Example request:
+
+```json
+{
+  "human_confirmed": true
+}
+```
+
+### Payment Status
+
+The system exposes a checkout-status endpoint.
+
+Example completed payment state:
+
+```json
+{
+  "approval_id": 2,
+  "checkout_status": "payment_completed",
+  "payment_state": "captured",
+  "paypal_order_exists": true,
+  "request_id_stored": true,
+  "recovery_action": "none"
+}
+```
+
+### Idempotency and Recovery
+
+The payment implementation includes persisted request identifiers to support idempotent order creation.
+
+Checkout recovery logic distinguishes between situations such as:
+
+- Checkout not yet initiated
+- Checkout currently processing
+- Existing PayPal order
+- Completed payment
+- Unknown payment outcome requiring reconciliation
+
+This is important because payment requests must not be retried blindly when the outcome is uncertain.
+
+---
+
+## 10. API Documentation
+
+The FastAPI backend provides interactive Swagger documentation.
+
+Start the backend and open:
 
 http://127.0.0.1:8000/docs
 
-Core Commerce APIs
+### Procurement Endpoints
 
-Method	Endpoint	Description
-GET	/health	Backend health check
-GET	/products	Retrieve products
-GET	/forecast/{product_id}	Demand forecasting
-GET	/simulate/{product_id}	Product demand simulation
-GET	/optimize/{product_id}	Procurement optimization
-GET	/suppliers/compare/{product_id}	Supplier comparison
-GET	/agents/run/{product_id}	Commerce agent orchestration
+| Method | Endpoint | Purpose |
+|--------|----------|---------|
+| POST | `/approvals/{approval_id}/approve` | Approve a purchase |
+| POST | `/approvals/{approval_id}/reject` | Reject a purchase |
+| POST | `/approvals/{approval_id}/reserve-checkout` | Reserve an approved checkout |
+| POST | `/approvals/{approval_id}/checkout` | Create a checkout for an approved purchase |
+| GET | `/approvals/{approval_id}/checkout-status` | Read checkout status |
+| POST | `/approvals/{approval_id}/capture` | Capture an approved payment |
 
-Advanced AI APIs
+Some endpoints require a merchant API key.
 
-Method	Endpoint	Description
-GET	/advanced/monte-carlo/{product_id}	Monte Carlo analysis
-GET	/advanced/explain/{product_id}	Prediction explanations
-GET	/advanced/graph/{product_id}	Graph analysis
-GET	/advanced/risk/{product_id}	Risk analysis
-GET	/advanced/metrics	Model metrics
-GET	/advanced/agent-explain/{product_id}	Agent explanations
-POST	/advanced/chat	AI chat
+The key is supplied through the `X-Merchant-API-Key` request header.
 
-Procurement and Payment APIs
+Do not expose API keys in public repositories, screenshots, or documentation.
 
-Method	Endpoint	Description
-POST	/approvals/{approval_id}/approve	Approve procurement
-POST	/approvals/{approval_id}/reject	Reject procurement
-POST	/approvals/{approval_id}/reserve-checkout	Reserve checkout
-POST	/approvals/{approval_id}/checkout	Create PayPal checkout
-GET	/approvals/{approval_id}/checkout-status	Retrieve checkout status
-POST	/approvals/{approval_id}/capture	Capture approved payment
+---
 
-Hackathon Demonstration APIs
+## 11. Project Structure
 
-Method	Endpoint	Description
-GET	/sprint/scenario/{product_id}	Scenario analysis
-GET	/sprint/trace/{product_id}	Agent execution trace
-GET	/sprint/checkout-audit/{approval_id}	Checkout audit
-GET	/sprint/backtest-summary	Backtesting summary
-GET	/sprint/copilot/{product_id}	AI copilot
+The repository is organized into independent frontend, backend, machine learning, simulation, optimization, and payment modules.
 
-⸻
-
-9. Installation and Setup
-
-Prerequisites
-
-Install:
-
-* Python 3.11 or later
-* Node.js and npm
-* Git
-* PayPal Sandbox developer credentials
-
-Clone the Repository
-
-git clone https://github.com/Nithya0605-eeri/Paypal-Synapse.git
-cd Paypal-Synapse
-
-Backend Setup
-
-cd backend
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-
-Environment Configuration
-
-Configure the required environment variables locally.
-
-Example:
-
-PAYPAL_CLIENT_ID=your_sandbox_client_id
-PAYPAL_CLIENT_SECRET=your_sandbox_client_secret
-PAYPAL_BASE_URL=https://api-m.sandbox.paypal.com
-MERCHANT_API_KEY=your_local_merchant_api_key
-
-Use the environment variable names expected by the backend configuration.
-
-Never commit actual credentials, API keys, or secrets to GitHub.
-
-Start the Backend
-
-uvicorn app.main:app --reload --port 8000
-
-Backend health endpoint:
-
-http://127.0.0.1:8000/health
-
-Interactive API documentation:
-
-http://127.0.0.1:8000/docs
-
-Frontend Setup
-
-Open a second terminal:
-
-cd frontend
-npm install
-npm run dev
-
-Open the local URL displayed by the frontend development server.
-
-⸻
-
-10. Testing and Validation
-
-The backend uses pytest for automated testing.
-
-Run:
-
-cd backend
-source .venv/bin/activate
-python -m pytest tests -q
-
-Latest Recorded Test Results
-
-Metric	Result
-Passing Tests	36
-Failing Tests	0
-Warnings	6
-Test Framework	pytest
-
-The six recorded warnings concern deprecated pandas date/time attributes.
-
-The passing test suite validates implemented backend functionality, including forecasting-related features, backtesting, and payment security behavior.
-
-A separate PayPal Sandbox checkout and capture flow was also manually verified.
-
-⸻
-
-11. Project Structure
-
+```text
 paypal-synapse/
 |
 |-- backend/
+|   |
 |   |-- app/
+|   |   |
 |   |   |-- advanced/
+|   |   |   `-- sprint.py
+|   |   |
 |   |   |-- ml/
 |   |   |   |-- predict.py
 |   |   |   |-- train_model.py
 |   |   |   `-- backtest.py
+|   |   |
 |   |   |-- optimization/
+|   |   |
 |   |   |-- payments/
 |   |   |   |-- approval_service.py
 |   |   |   |-- checkout_service.py
-|   |   |   `-- paypal_client.py
+|   |   |   |-- paypal_client.py
+|   |   |   `-- README.md
+|   |   |
 |   |   |-- simulation/
+|   |   |
 |   |   |-- auth.py
 |   |   |-- database.py
 |   |   |-- models.py
 |   |   |-- seed.py
 |   |   `-- main.py
+|   |
 |   |-- tests/
 |   `-- requirements.txt
 |
@@ -444,6 +503,7 @@ paypal-synapse/
 |   |   |-- App.jsx
 |   |   |-- AdvancedAI.jsx
 |   |   `-- SprintLab.jsx
+|   |
 |   `-- package.json
 |
 |-- models/
@@ -451,134 +511,347 @@ paypal-synapse/
 |
 |-- .gitignore
 `-- README.md
+```
 
-⸻
+### Module Responsibilities
 
-12. Demonstration Scenario
+| Module | Responsibility |
+|--------|----------------|
+| Frontend | Interactive merchant dashboard |
+| Backend | REST API and application services |
+| ML | Demand forecasting and backtesting |
+| Simulation | Commerce scenario exploration |
+| Optimization | Procurement decision support |
+| Advanced | Advanced analytics components |
+| Payments | Purchase approval and PayPal integration |
+| Database | Persistent application records |
+| Tests | Automated backend verification |
+
+---
+
+## 12. Installation and Setup
+
+### Prerequisites
+
+Install:
+
+- Python 3.11 or a compatible version
+- Node.js
+- npm
+- Git
+
+PayPal Sandbox credentials are required for payment integration.
+
+### Step 1: Clone the Repository
+
+```bash
+git clone https://github.com/Nithya0605-eeri/Paypal-synapse.git
+cd Paypal-synapse
+```
+
+### Step 2: Set Up the Backend
+
+```bash
+cd backend
+
+python3 -m venv .venv
+
+source .venv/bin/activate
+
+pip install -r requirements.txt
+```
+
+### Step 3: Configure Environment Variables
+
+Configure the backend using local environment variables.
+
+The PayPal integration requires Sandbox credentials, including the appropriate client ID and client secret.
+
+The merchant API authentication mechanism also requires its configured API key.
+
+Keep all secrets outside version control.
+
+Do not commit your `.env` file.
+
+### Step 4: Start the Backend
+
+From the `backend` directory:
+
+```bash
+uvicorn app.main:app --reload --port 8000
+```
+
+Open the interactive API documentation:
+
+http://127.0.0.1:8000/docs
+
+### Step 5: Start the Frontend
+
+Open another terminal:
+
+```bash
+cd frontend
+
+npm install
+
+npm run dev
+```
+
+Open the local URL displayed by the frontend development server.
+
+### Step 6: Test the Application
+
+Run the backend test suite:
+
+```bash
+cd backend
+
+source .venv/bin/activate
+
+python -m pytest tests -q
+```
+
+---
+
+## 13. Testing and Validation
+
+Testing is important for both forecasting reliability and payment safety.
+
+The backend uses Pytest for automated testing.
+
+### Verified Test Result
+
+During development, the backend test suite produced:
+
+```text
+36 passed, 6 warnings
+```
+
+The warnings were associated with deprecated Pandas date-related properties.
+
+They did not prevent the tests from passing.
+
+### Testing Areas
+
+The automated test suite includes coverage related to:
+
+- Forecasting functionality
+- Advanced analytics
+- Backtesting behavior
+- Data leakage prevention
+- Backend application behavior
+- Payment security
+
+### PayPal Sandbox Validation
+
+A separate manual Sandbox test verified the procurement payment workflow.
+
+The demonstrated sequence included:
+
+1. Preparing an approved purchase.
+2. Creating a PayPal Sandbox order.
+3. Opening the PayPal checkout URL.
+4. Approving the order in the Sandbox.
+5. Checking the PayPal order status.
+6. Capturing the approved payment.
+7. Verifying the completed payment state.
+
+The tested purchase amount was **$390.00 USD**.
+
+The capture endpoint returned:
+
+```json
+{
+  "approval_id": 2,
+  "payment_status": "captured",
+  "status": "payment_completed"
+}
+```
+
+The checkout-status endpoint subsequently confirmed:
+
+```json
+{
+  "approval_id": 2,
+  "checkout_status": "payment_completed",
+  "payment_state": "captured",
+  "paypal_order_exists": true,
+  "request_id_stored": true,
+  "recovery_action": "none"
+}
+```
+
+These results demonstrate a successful Sandbox payment capture workflow.
+
+They do not represent a live financial transaction.
+
+---
+
+## 14. Demonstration Scenario
 
 Consider a merchant whose product demand is expected to increase.
 
-Stage 1: Forecast
+### Stage 1: Forecast
 
-The forecasting engine estimates future demand.
+The machine learning engine estimates future product demand.
 
-Stage 2: Simulate
+### Stage 2: Simulate
 
 The digital twin explores alternative demand scenarios and potential disruptions.
 
-Stage 3: Evaluate
+### Stage 3: Evaluate
 
 Risk analysis identifies possible inventory shortages.
 
-Stage 4: Optimize
+### Stage 4: Optimize
 
-The procurement engine evaluates supplier options and purchasing requirements.
+The procurement engine supports evaluation of replenishment decisions.
 
-Stage 5: Recommend
+### Stage 5: Recommend
 
-AI agents generate a procurement recommendation.
+The platform generates a purchasing recommendation.
 
-Stage 6: Approve
+### Stage 6: Approve
 
-The merchant reviews and explicitly authorizes the proposed purchase.
+A human reviews the proposed purchase and decides whether to authorize it.
 
-Stage 7: Pay
+### Stage 7: Checkout
 
-Synapse creates a PayPal Sandbox checkout for the approved amount.
+The backend creates a PayPal Sandbox order for the approved purchase.
 
-Stage 8: Verify
+### Stage 8: Capture
 
-After buyer approval and authorized capture, the application records the payment outcome.
+After checkout approval, payment capture is performed with explicit human confirmation.
 
-This scenario demonstrates how predictive AI can connect directly to an actionable commerce workflow while preserving human financial control.
+### Stage 9: Verify
 
-⸻
+The system records and exposes the resulting payment state.
 
-13. What Makes Synapse Different?
+The demonstrated payment workflow reached:
 
-From Reactive to Predictive Commerce
+```text
+PAYMENT COMPLETED
+PAYMENT STATE: CAPTURED
+RECOVERY ACTION: NONE
+```
 
-Rather than simply reporting inventory levels, Synapse forecasts potential shortages.
+---
 
-From Predictions to Decisions
+## 15. Security and Responsible AI
 
-Machine learning results are connected to supplier evaluation and procurement optimization.
+PayPal Synapse is designed around the principle that AI should support financial decisions without independently controlling payment authorization.
 
-From Isolated Models to Coordinated Agents
+### Human Authorization
 
-AI workflows bring forecasting, simulation, risk analysis, and purchasing recommendations together.
+AI-generated recommendations require human approval before financial execution.
 
-From Recommendations to Payments
+### Credential Protection
 
-PayPal Sandbox integration demonstrates how an approved procurement recommendation can become a payment workflow.
+Sensitive credentials should be stored using environment variables.
 
-Human Control Over Financial Actions
+Secrets must not be committed to GitHub.
 
-The platform separates AI decision support from final purchase authorization.
+### Idempotency
 
-Transparent and Testable Architecture
+Persisted PayPal request identifiers support safer handling of repeated order-creation requests.
 
-Explainability endpoints, backtesting, checkout status tracking, and automated tests make system behavior easier to inspect.
+### Transaction Recovery
 
-⸻
+Unknown payment outcomes require reconciliation rather than automatic repeated execution.
 
-14. Future Improvements
+### Sandbox Isolation
 
-Potential future extensions include:
+Payment demonstrations use PayPal Sandbox rather than live payment accounts.
 
-* Real-time merchant inventory integrations
-* Multi-merchant commerce support
-* Advanced time-series forecasting models
-* Dynamic supplier reliability scoring
-* Reinforcement learning for procurement policies
-* Automated anomaly detection
-* Real-time payment event synchronization
-* Cloud deployment and monitoring
-* Production-grade authentication and authorization
-* Expanded observability and model drift monitoring
+### Decision Transparency
 
-⸻
+Forecasting and simulation outputs are intended to inform merchant decisions, not replace human judgment.
 
-15. Responsible AI and Security
+---
 
-PayPal Synapse is a prototype designed to demonstrate AI-assisted commerce.
+## 16. Innovation and PayPal Relevance
 
-Its guiding principles include:
+PayPal Synapse explores how payment infrastructure can become part of a broader AI-assisted commerce workflow.
 
-* Human oversight of purchasing decisions
-* Explicit payment confirmation
-* Protection of credentials and API keys
-* Separation of recommendations from financial execution
-* Traceability of procurement actions
-* Clear reporting of payment outcomes
-* Safe handling of uncertain payment states
+Rather than treating payments as an isolated final transaction, the project connects them to the decisions that precede a purchase.
 
-The application currently demonstrates payment integration through PayPal Sandbox and is not presented as a production-certified financial platform.
+### Key Innovations
 
-⸻
+**Predictive Commerce**
 
-16. Hackathon Submission
+Demand forecasting helps anticipate future purchasing requirements.
 
-Project: PayPal Synapse
+**Digital Twin Intelligence**
 
-Event: PayPal AI Hackathon 2026
+Simulation supports exploration of alternative operational scenarios.
 
-Category: AI-Powered Commerce and Intelligent Automation
+**Risk-Aware Procurement**
 
-Core Technologies: Machine Learning, Agentic AI, Digital Twins, Probabilistic Simulation, FastAPI, React, and PayPal Sandbox
+Procurement decisions can incorporate demand uncertainty and inventory risk.
 
-Project Objective: Build an intelligent commerce platform that predicts inventory needs, supports optimized procurement decisions, and connects human-approved purchasing workflows to PayPal.
+**Human-Governed Automation**
 
-⸻
+AI supports recommendations while humans retain authority over payment execution.
 
-17. Conclusion
+**Integrated PayPal Checkout**
 
-PayPal Synapse demonstrates a vision for the future of intelligent commerce.
+Approved purchasing workflows connect to PayPal Sandbox order creation and capture.
 
-By combining predictive machine learning, probabilistic simulation, AI agent orchestration, supplier optimization, and PayPal payment infrastructure, the platform connects business intelligence with practical procurement execution.
+**Payment Reliability**
 
-The future of commerce is not just automated. It is predictive, intelligent, explainable, and human-controlled.
+Idempotency and recovery-state tracking help reduce risks associated with uncertain checkout outcomes.
 
-⸻
+---
 
-Built for the PayPal AI Hackathon 2026.
+## 17. Future Enhancements
+
+Potential future improvements include:
+
+- Real-time inventory data ingestion
+- Additional forecasting models
+- Multi-product demand forecasting
+- Supplier reliability scoring
+- More advanced procurement optimization
+- Automated scenario comparisons
+- Enhanced visualization of simulation results
+- Real-time payment status synchronization
+- Improved transaction reconciliation
+- Expanded automated testing
+- Cloud deployment
+- Merchant analytics and reporting
+- Advanced AI agent orchestration
+
+These enhancements represent future development opportunities rather than claims of currently verified functionality.
+
+---
+
+## 18. Project Impact
+
+PayPal Synapse demonstrates how AI and payment infrastructure can work together to support better commerce decisions.
+
+The platform explores opportunities to:
+
+- Anticipate inventory shortages
+- Improve procurement planning
+- Evaluate operational uncertainty
+- Reduce manual decision-making effort
+- Connect purchasing recommendations to secure payment workflows
+- Maintain human control over financial execution
+
+The project combines predictive machine learning, digital twin simulation, procurement intelligence, backend engineering, and PayPal Sandbox integration.
+
+---
+
+## 19. Conclusion
+
+PayPal Synapse presents a vision for more intelligent and proactive commerce operations.
+
+By combining demand forecasting, probabilistic simulation, procurement decision support, and human-approved PayPal payment workflows, the platform connects business intelligence with financial execution.
+
+The future of commerce is not just automated.
+
+**It is predictive, adaptive, and human-governed.**
+
+---
+
+**Built for the PayPal AI Hackathon 2026.**
